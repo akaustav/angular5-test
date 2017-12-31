@@ -24,13 +24,15 @@ export class DashboardComponent implements OnInit {
   }
 
   public createCards(): void {
+    const metadata = DashboardCard.metadata;
+
     this.cardsService.addCard(
       new DashboardCard(
         new InputToken(
-          new InputProperty(DashboardCard.metadata.NAME, 'users'),
-          new InputProperty(DashboardCard.metadata.ROUTERLINK, '/dashboard/users'),
-          new InputProperty(DashboardCard.metadata.ICONCLASS, 'fa-users'),
-          new InputProperty(DashboardCard.metadata.COLOR, 'blue')
+          new InputProperty(metadata.NAME, 'users'),
+          new InputProperty(metadata.ROUTERLINK, '/dashboard/users'),
+          new InputProperty(metadata.ICONCLASS, 'fa-users'),
+          new InputProperty(metadata.COLOR, 'blue')
         ),
         DashboardUsersComponent
       )
