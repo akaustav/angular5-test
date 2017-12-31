@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { DashboardCardsService } from './dashboard-cards.service';
 import { DashboardCardSpawnerComponent } from './dashboard-card-spawner.component';
+import { DashboardComponent } from './dashboard.component';
 
 @NgModule({
   declarations: [
-    DashboardCardSpawnerComponent
+    DashboardCardSpawnerComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule

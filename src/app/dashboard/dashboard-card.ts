@@ -1,25 +1,31 @@
 import { InjectionToken } from '@angular/core';
 
-export interface InputPropertyInterface {
-  key: InjectionToken<string>;
-  value: string;
+export class InputProperty {
+  constructor(
+    public key: InjectionToken<string>,
+    public value: string
+  ) {}
 }
 
-export interface InputInterface {
-  name: InputPropertyInterface;
-  routerLink: InputPropertyInterface;
-  color: InputPropertyInterface;
+export class InputToken {
+  constructor (
+    public name: InputProperty,
+    public routerLink: InputProperty,
+    public iconClass: InputProperty,
+    public color: InputProperty
+  ) {}
 }
 
 export class DashboardCard {
   static metadata: any = {
     NAME: new InjectionToken<string>('name'),
     ROUTERLINK: new InjectionToken<string>('routerLink'),
+    ICONCLASS: new InjectionToken<string>('iconClass'),
     COLOR: new InjectionToken<string>('color')
   };
 
   constructor(
-    private _input: InputInterface,
+    private _input: InputToken,
     private _component: any
   ) {}
 
